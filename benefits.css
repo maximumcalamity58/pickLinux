@@ -1,0 +1,94 @@
+/* Basic styling adjustments */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1b1b1b;
+    color: #eee;
+}
+
+/* Header styling */
+header {
+    background-color: #006400;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    transform: translateY(0%) !important;
+}
+
+/* Intro section */
+.intro-content {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+#content {
+    margin: 15vh 0 10vh;
+}
+
+/* Benefit sections */
+.benefit-section {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 10vh auto;
+    max-width: 800px;
+}
+
+.benefit-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Toggle button styling */
+.toggle-btn {
+    background-color: #444;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.toggle-btn:hover {
+    background-color: #666;
+}
+
+/* Icons for sections */
+.icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Collapsible content styling */
+.toggle-content {
+    padding: 1rem;
+    background-color: #222;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    border-top: 2px solid #006400;
+}

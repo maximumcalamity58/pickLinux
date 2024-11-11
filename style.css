@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    padding: 1vh;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1b1b1b;
+    color: #eee;
+    overflow-y: hidden; /* Hide vertical scroll bar */
+}
+
+header {
+    background-color: #006400;
+    color: #fff;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+header.show {
+    transform: translateY(0);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin-bottom: -1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Full-screen intro */
+.intro {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('linux.jpg') no-repeat center center/cover;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.intro-content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    margin: 30%;
+}
+
+.intro h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.intro button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.intro button:hover {
+    background-color: #008800;
+}
+
+.scroll-down {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #ffcc00;
+}
+
+/* Feature sections with more spacing */
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    padding: 4rem 5%;
+    background-color: #222;
+    border-radius: 15px;
+    margin: 10vh auto; /* Larger space between panels */
+    max-width: 1000px;
+    gap: 2rem;
+}
+
+.slideshow-container {
+    width: 80%; /* Increased size of the slideshow */
+    max-width: 800px; /* Limit maximum width */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin: 0 auto; /* Center the slideshow */
+}
+
+.slide-image {
+    width: 100% !important;
+    height: auto;
+}
+
+.feature img {
+    width: 45%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.feature:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.feature-text {
+    max-width: 50%;
+}
+
+.feature h2 {
+    font-size: 2.5rem;
+    color: #00ff00;
+    margin-bottom: 1rem;
+}
+
+.feature p {
+    margin-bottom: 1rem;
+    color: #ddd;
+    font-size: 1.1rem;
+}
+
+.feature a {
+    display: inline-block;
+    color: #00ff00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.feature a:hover {
+    color: #ffcc00;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-top: -2.5vh;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    width: 70%;
+    max-width: 800px;
+    height: 205px; /* Fixed height to ensure visibility */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Slide images with position absolute for transition effects */
+.slide-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade and swipe */
+}
+
+/* Active slide */
+.active-slide {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Centered */
+    z-index: 1;
+}
+
+/* Slide transition for swipe effect */
+.slide-out-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.slide-out-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+/* Navigation arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s ease;
+    opacity: 1;
+    user-select: none;
+    z-index: 100;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 11;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+

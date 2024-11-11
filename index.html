@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Choose Linux</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Why You Should Pick Linux</h1>
+        <p>A Guide for Tech Enthusiasts</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="benefits.html">Benefits</a>
+            <a href="comparison.html">Comparison</a>
+            <a href="resources.html">Resources</a>
+            <a href="conclusion.html">Conclusion</a>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <div class="intro-content">
+            <h2>Welcome to the Linux World</h2>
+            <p>Explore why Linux is the top choice for tech enthusiasts seeking freedom, security, and customization. Unlike proprietary operating systems, Linux provides users with complete control over their software and data. Dive into a world where you can mold your operating system to suit your exact needs.</p>
+            <button onclick="window.location.href='benefits.html'">Discover Benefits</button>
+            <div class="scroll-down">↓ Scroll to learn more ↓</div>
+        </div>
+    </section>
+
+    <section class="feature" id="opensource">
+        <img src="opensource.jpg" alt="Open Source Freedom">
+        <div class="feature-text">
+            <h2>Open Source Freedom</h2>
+            <p>Linux is open-source, meaning the code is freely available to everyone. This transparency ensures that you can inspect, modify, and distribute the code as you see fit. With Linux, you’re not just a user; you're part of a community that builds, shares, and improves the software collectively.</p>
+            <p>Open source empowers you to make the system your own. Want to add a feature? You can contribute to the code yourself or find a like-minded developer who has already created it. The flexibility is unparalleled.</p>
+            <a href="benefits.html#opensource">Learn More</a>
+        </div>
+    </section>
+
+    <section class="feature" id="security">
+        <div class="feature-text">
+            <h2>Enhanced Security</h2>
+            <p>Built by a global community of developers and security experts, Linux is known for its robust security architecture. Unlike commercial systems that can have closed-door vulnerabilities, Linux’s open nature allows any developer to identify and fix potential security issues.</p>
+            <p>With Linux, you get frequent updates, quick vulnerability patches, and security options tailored to your needs. Whether you’re a casual user or a system administrator, Linux offers peace of mind in a connected world.</p>
+            <a href="benefits.html#security">Learn More</a>
+        </div>
+        <img src="security.jpg" alt="Enhanced Security">
+    </section>
+
+    <section class="feature" id="customization">
+        <div class="slideshow-container">
+            <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+            <img class="slide-image" src="customization1.jpg" alt="Linux Desktop 1" onclick="openModal(this.src)">
+            <img class="slide-image" src="customization2.webp" alt="Linux Desktop 2" onclick="openModal(this.src)">
+            <img class="slide-image" src="customization3.jpg" alt="Linux Desktop 3" onclick="openModal(this.src)">
+            <span class="next" onclick="changeSlide(1)">&#10095;</span>
+        </div>
+        <div class="feature-text">
+            <h2>Deep Customization</h2>
+            <p>Linux allows customization at every level, from the user interface to the underlying system architecture. Want a minimalist environment? Install a lightweight desktop like XFCE. Prefer something flashy? GNOME and KDE offer polished, feature-rich experiences.</p>
+            <p>With Linux, you’re free to choose the look, feel, and functionality that best suits your workflow. Tailor your system to perform exactly how you want it to, without unnecessary bloat or limitations.</p>
+            <a href="benefits.html#customization">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Modal for larger view of images -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+
+
+    <footer>
+        <p>Ready to explore Linux? Join the community today!</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to external JavaScript -->
+</body>
+</html>
