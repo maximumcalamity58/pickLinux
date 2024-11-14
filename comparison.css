@@ -13,15 +13,6 @@ body {
 
 /* Header styling */
 header {
-    background-color: #1e391e;
-    color: #fff;
-    padding: 0.25rem;
-    font-size: 0.7rem;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
     transform: translateY(0%) !important;
 }
 
