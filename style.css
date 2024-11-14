@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 /* Hide scrollbar for Chrome, Safari, and Opera */
 html, body {
     -ms-overflow-style: none;  /* For Internet Explorer and Edge */

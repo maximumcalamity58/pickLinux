@@ -5,37 +5,41 @@ let isScrolling = false;
 
 // Function to disable scroll temporarily
 function disableScroll() {
-    document.body.style.overflow = "hidden";
+    document.documentElement.classList.add("no-scroll");
 }
 
 function enableScroll() {
-    document.body.style.overflow = "auto";
-    document.body.style.overflowY = "hidden";
+    document.documentElement.classList.remove("no-scroll");
 }
+
+// Threshold for distinguishing small and large scroll gestures
+const scrollSensitivity = 50; // Adjust as needed to balance small vs large scrolls
 
 // Listen for wheel scroll events
 window.addEventListener("wheel", (event) => {
     if (isScrolling) return; // Ignore if currently in a scrolling transition
 
-    // Determine the scroll direction
-    if (event.deltaY > 0 && currentSectionIndex < sections.length - 1) {
-        // Scroll down to the next section
-        currentSectionIndex++;
-    } else if (event.deltaY < 0 && currentSectionIndex > 0) {
-        // Scroll up to the previous section
-        currentSectionIndex--;
-    }
+    // Check if scroll intensity exceeds sensitivity threshold
+    const scrollSteps = Math.round(event.deltaY / scrollSensitivity);
+    let targetSectionIndex = currentSectionIndex + scrollSteps;
 
-    // Scroll to the target section and disable further scrolls
+    // Clamp target section index within bounds
+    targetSectionIndex = Math.max(0, Math.min(targetSectionIndex, sections.length - 1));
+
+    // If target index is the same, skip the scroll to avoid redundancy
+    if (targetSectionIndex === currentSectionIndex) return;
+
+    // Scroll to the target section
     isScrolling = true;
     disableScroll();
-    sections[currentSectionIndex].scrollIntoView({ behavior: "smooth", block: "center" });
+    sections[targetSectionIndex].scrollIntoView({ behavior: "smooth", block: "center" });
+    currentSectionIndex = targetSectionIndex;
 
-    // Set a timeout to re-enable scrolling after 200ms
+    // Re-enable scrolling after a slight delay
     setTimeout(() => {
         enableScroll();
         isScrolling = false;
-    }, 200);
+    }, 300); // Adjust delay as needed for responsiveness
 });
 
 // Header hide on scroll down, show on scroll up
